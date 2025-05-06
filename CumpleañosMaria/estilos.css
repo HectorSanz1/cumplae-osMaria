@@ -1,0 +1,244 @@
+body {
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 50px;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Texto y corazones */
+h1, h2, p, .heart {
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.2em;
+    opacity: 0;
+    animation: fadeIn 1s forwards ease-out;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 0;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideIn 1s 0.8s forwards ease-out;
+}
+
+p {
+    font-size: 1.3em;
+    max-width: 600px;
+    margin: 20px auto;
+    opacity: 0;
+}
+
+/* Animaciones personalizadas */
+.fade-in {
+    animation: fadeIn 1s forwards ease-out;
+}
+
+.delay {
+    animation-delay: 1.6s;
+}
+
+.delay2 {
+    animation-delay: 2.2s;
+}
+
+.slide-in {
+    animation: slideIn 1s forwards ease-out;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Corazones animados */
+.heart {
+    font-size: 5em;
+    color: red;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Burbujas decorativas animadas */
+.bubbles span {
+    position: absolute;
+    bottom: -50px;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    animation: rise 10s infinite ease-in;
+}
+
+.bubbles span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.bubbles span:nth-child(2) {
+    left: 30%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+}
+
+.bubbles span:nth-child(3) {
+    left: 50%;
+    animation-delay: 4s;
+}
+
+.bubbles span:nth-child(4) {
+    left: 70%;
+    width: 10px;
+    height: 10px;
+    animation-delay: 6s;
+}
+
+.bubbles span:nth-child(5) {
+    left: 90%;
+    animation-delay: 8s;
+}
+
+@keyframes rise {
+    0% {
+        bottom: -50px;
+        opacity: 0;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(30px);
+    }
+    100% {
+        bottom: 100%;
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+}
+
+/* Estilo del botón solo con emoji */
+.emoji-only {
+    font-size: 2em;
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #ff4081;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background-color 0.3s;
+    text-decoration: none;
+    margin-top: 30px;
+}
+
+.emoji-only:hover {
+    background-color: #ffe3ec;
+    transform: scale(1.1);
+}
+
+/* Botón fijo con emoji en parte inferior derecha */
+.emoji-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2em;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #ff4081;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.emoji-fixed:hover {
+    background-color: #ffe3ec;
+    transform: scale(1.1);
+}
+
+/* Medias Queries para hacer responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+    .emoji-only {
+        font-size: 1.5em;
+        width: 50px;
+        height: 50px;
+    }
+
+    .emoji-fixed {
+        font-size: 1.5em;
+        width: 50px;
+        height: 50px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    h2 {
+        font-size: 1.3em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .emoji-only {
+        font-size: 1.3em;
+        width: 40px;
+        height: 40px;
+    }
+
+    .emoji-fixed {
+        font-size: 1.3em;
+        width: 40px;
+        height: 40px;
+    }
+}
