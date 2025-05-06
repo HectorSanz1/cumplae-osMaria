@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños!</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <!-- Fondo y burbujas animadas -->
+    <div class="bubbles">
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- Animaciones de confeti y globos -->
+    <div class="confeti"></div>
+    <div class="globos"></div>
+
+    <!-- Título y mensaje de cumpleaños -->
+    <div class="titulo">
+        <h1 class="animate__animated animate__fadeIn animate__delay-1s">¡Feliz Cumpleaños, María!</h1>
+        <h2 class="animate__animated animate__fadeIn animate__delay-2s">¡Que tengas un día increíble lleno de amor y risas!</h2>
+    </div>
+
+    <!-- Botón para ver más -->
+    <a href="recuerdos.html" class="btn emoji-fixed animate__animated animate__bounceInUp">🎉</a>
+
+    <!-- Scripts para Swiper y confeti -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script>
+        // Función para crear el confeti
+        function lanzarConfeti() {
+            confetti({
+                particleCount: 150,
+                spread: 60,
+                origin: { y: 0.5 }
+            });
+        }
+
+        // Lanzar confeti al cargar la página
+        window.onload = function() {
+            setInterval(lanzarConfeti, 2000);
+        };
+    </script>
+</body>
+</html>
